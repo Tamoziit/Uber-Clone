@@ -11,6 +11,11 @@ export const registerUser = async (req, res, next) => {
         }
 
         const { fullname, email, password } = req.body;
+        const isUserAlreadyExists = await UserModel.findOne({ email });
+        if (isUserAlreadyExists) {
+            return res.status(400).json({ message: "User with this email already exists" });
+        }
+
         const hashedPassword = await UserModel.hashPassword(password);
 
         const user = await createUser({
@@ -68,13 +73,13 @@ export const getUserProfile = async (req, res, next) => {
 
 export const logoutUser = async (req, res, next) => {
     try {
-        res.clearCookie("token");
         const token = req.cookies.token || req.headers.authorization.split(' ')[1];
         await BlacklistTokenModel.create({ token });
+        res.clearCookie("token");
 
         res.status(200).json({ message: "Logged out" });
     } catch (error) {
-        console.log("Error in logout controller", error);
+        console.log("Error in logout user controller", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
 }
