@@ -18,9 +18,9 @@ const CaptainLogin = () => {
 	}
 
 	return (
-		<div className="p-7 h-screen flex flex-col justify-between">
+		<div className="px-5 py-5 h-screen flex flex-col justify-between">
 			<div>
-				<img src="/driver-logo.svg" alt="logo" className="w-16 mb-10" />
+				<img src="/driver-logo.svg" alt="logo" className="w-16 mb-7" />
 
 				<form onSubmit={handleSubmit}>
 					<h3 className="text-lg mb-2 font-medium ">What's your email</h3>
@@ -32,7 +32,7 @@ const CaptainLogin = () => {
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					/>
-					<h3 className="text-lg mb-2 font-medium ">Enter Password</h3>
+					<h3 className="text-lg mb-2 font-medium ">Enter password</h3>
 					<input
 						required
 						type="password"

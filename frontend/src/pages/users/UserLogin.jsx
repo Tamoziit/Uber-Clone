@@ -32,7 +32,7 @@ const UserLogin = () => {
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					/>
-					<h3 className="text-lg mb-2 font-medium ">Enter Password</h3>
+					<h3 className="text-lg mb-2 font-medium ">Enter password</h3>
 					<input
 						required
 						type="password"
