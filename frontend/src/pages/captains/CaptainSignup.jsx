@@ -11,7 +11,7 @@ const CaptainSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUserData({
-      username: {
+      fullName: {
         firstName,
         lastName
       },
@@ -31,7 +31,7 @@ const CaptainSignup = () => {
         <img src="/driver-logo.svg" alt="logo" className="w-16 mb-7" />
 
         <form onSubmit={handleSubmit}>
-          <h3 className="text-base mb-2 font-medium ">What's your name</h3>
+          <h3 className="text-base mb-2 font-medium ">What's our Captain's name</h3>
           <div className="flex gap-4 mb-6">
             <input
               required
@@ -50,7 +50,7 @@ const CaptainSignup = () => {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
-          <h3 className="text-base mb-2 font-medium ">What's your email</h3>
+          <h3 className="text-base mb-2 font-medium ">What's our Captain's email</h3>
           <input
             required
             type="email"

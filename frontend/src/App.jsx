@@ -4,8 +4,13 @@ import UserSignup from "./pages/users/UserSignup";
 import UserLogin from "./pages/users/UserLogin";
 import CaptainSignup from "./pages/captains/CaptainSignup";
 import CaptainLogin from "./pages/captains/CaptainLogin";
+import { useContext } from "react";
+import { UserDataContext } from "./context/UserContext";
 
 function App() {
+  const ans = useContext(UserDataContext);
+  console.log(ans);
+  
   return (
     <>
       <Routes>
