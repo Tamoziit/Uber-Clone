@@ -5,14 +5,19 @@ import UserSignup from "./pages/users/UserSignup";
 import UserLogin from "./pages/users/UserLogin";
 import CaptainSignup from "./pages/captains/CaptainSignup";
 import CaptainLogin from "./pages/captains/CaptainLogin";
-import { useContext } from "react";
-import { UserDataContext } from "./context/UserContext";
 import UserProtectedWrapper from "./components/userProtectedWrapper";
 import UserLogout from "./pages/users/UserLogout";
+import CaptainHome from "./pages/home/CaptainHome";
+import { useContext } from "react";
+import { UserDataContext } from "./context/UserContext";
+import { CaptainDataContext } from "./context/CaptainContext";
+import CaptainProtectedWrapper from "./components/CaptainProtectedWrapper";
 
 function App() {
   const ans = useContext(UserDataContext);
-  console.log(ans);
+  const ans2 = useContext(CaptainDataContext);
+  console.log("user", ans);
+  console.log("captain", ans2);
 
   return (
     <>
@@ -22,6 +27,11 @@ function App() {
         <Route path="/login" element={<UserLogin />} />
         <Route path="/captain-signup" element={<CaptainSignup />} />
         <Route path="/captain-login" element={<CaptainLogin />} />
+        <Route path="/captain-home" element={
+          <CaptainProtectedWrapper>
+            <CaptainHome />
+          </CaptainProtectedWrapper>
+        } />
         <Route path="/home" element={
           <UserProtectedWrapper>
             <Home />
