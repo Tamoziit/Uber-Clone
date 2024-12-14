@@ -5,13 +5,13 @@ import UserSignup from "./pages/users/UserSignup";
 import UserLogin from "./pages/users/UserLogin";
 import CaptainSignup from "./pages/captains/CaptainSignup";
 import CaptainLogin from "./pages/captains/CaptainLogin";
-import UserProtectedWrapper from "./components/userProtectedWrapper";
+import UserProtectedWrapper from "./security/userProtectedWrapper";
 import UserLogout from "./pages/users/UserLogout";
 import CaptainHome from "./pages/home/CaptainHome";
 import { useContext } from "react";
 import { UserDataContext } from "./context/UserContext";
 import { CaptainDataContext } from "./context/CaptainContext";
-import CaptainProtectedWrapper from "./components/CaptainProtectedWrapper";
+import CaptainProtectedWrapper from "./security/CaptainProtectedWrapper";
 
 function App() {
   const ans = useContext(UserDataContext);
