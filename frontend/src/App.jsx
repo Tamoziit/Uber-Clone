@@ -8,11 +8,12 @@ import CaptainLogin from "./pages/captains/CaptainLogin";
 import UserProtectedWrapper from "./security/userProtectedWrapper";
 import UserLogout from "./pages/users/UserLogout";
 import CaptainHome from "./pages/home/CaptainHome";
+import CaptainProtectedWrapper from "./security/CaptainProtectedWrapper";
+import Riding from "./pages/riding/Riding";
+import CaptainRiding from "./pages/riding/CaptainRiding";
 import { useContext } from "react";
 import { UserDataContext } from "./context/UserContext";
 import { CaptainDataContext } from "./context/CaptainContext";
-import CaptainProtectedWrapper from "./security/CaptainProtectedWrapper";
-import Riding from "./pages/riding/Riding";
 
 function App() {
   const ans = useContext(UserDataContext);
@@ -47,6 +48,11 @@ function App() {
           <UserProtectedWrapper>
             <Riding />
           </UserProtectedWrapper>
+        } />
+        <Route path="/captain-riding" element={
+          <CaptainProtectedWrapper>
+            <CaptainRiding />
+          </CaptainProtectedWrapper>
         } />
       </Routes>
     </>
